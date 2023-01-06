@@ -15,7 +15,11 @@ export default function VtoA() {
     const { id } = useParams();
     const [audioName, setAN] = useState("");
     const [format, setFormat] = useState("mp4");
+    const [comment, setcomment] = useState('');
     var wavesurfer = useRef();
+    const timestamps ={
+        "20.6":"dasd"
+    }
     useEffect(() => {
         getHbyId(id)
             .then((res) => {
@@ -83,6 +87,28 @@ export default function VtoA() {
             .catch((err) => console.log(err));
     }, [id, navigate]);
 
+    const ordered = Object.keys(timestamps).sort().reduce(
+        (obj, key) => { 
+          obj[key] = timestamps[key]; 
+          return obj;
+        }, 
+        {}
+      );
+      
+    const addcomment=(event)=>{ 
+        setcomment(event.target.value)
+    }
+
+    function submitcomment() {
+        // CurrentTime2 has timestamp and comment has comment
+        // console.log(comment,wavesurfer.current.getCurrentTime())
+        const current_time=wavesurfer.current.getCurrentTime()
+        timestamps[current_time]=comment
+        
+        console.log(JSON.stringify(timestamps))
+    }
+
+
     return (
         <>
             <div className="flex items-center justify-center p-12 bg-white dark:bg-gray-900">
@@ -107,6 +133,16 @@ export default function VtoA() {
                                 <div className="items-center text-center">
                                 <button onClick={() => {wavesurfer.current.playPause()}} className="hover:shadow-form w-full max-w-[550px] rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none mb-2">Play/Pause</button>
                                 <br />
+                                <div className="text-white mx-auto font-semibold">Add Comment   </div>
+                                <div> 
+                                <input type="text" height="200" placeholder="Add Comment" onChange={addcomment}></input>
+                                </div>
+                                
+                                <button
+                                    className="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none" onClick={() => submitcomment()}
+                                >
+                                    Add Comment 
+                                </button>
                                 <button className="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none" onClick={() => navigate("/video-to-audio")}>Convert Another Video</button>
                                 </div>
                             </div>
