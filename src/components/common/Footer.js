@@ -31,19 +31,18 @@ export default function Footer() {
                         <div className="mt-6 lg:mt-0 lg:flex-1">
                             <div className="grid grid-cols-2 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
                                 <div>
-                                    <h3 className="text-gray-700 uppercase dark:text-white">Tasks</h3>
-                                    <a href="/tasks" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">View Your Tasks</a>
-                                    <a href="/tasks/add" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Add Tasks</a>
-                                    <a href="/tasks/add" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Update Tasks</a>
+                                    <h3 className="text-gray-700 uppercase dark:text-white">Video To Audio</h3>
+                                    <a href="/video-to-audio" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Upload Video from Device</a>
+                                    <a href="/video-to-audio" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Upload Video using Link</a>
+                                    <a href="/video-to-audio" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Upload Audio</a>
                                 </div>
 
 
                                 <div>
                                     <h3 className="text-gray-700 uppercase dark:text-white">Contact</h3>
-                                    <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Kartik Rajput</span>
-                                    <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Vivek Verma</span>
-                                    <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Sahil Zawar</span>
-                                    <span onClick={() => window.location = `mailto:kartikvirendrarajput@gmail.com`} className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">kartikvirendrarajput@gmail.com</span>
+                                    <span onClick={() => window.location = `mailto:kartikvirendrarajput@gmail.com`} className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Kartik Rajput</span>
+                                    <span onClick={() => window.location = `mailto:vivek569verma@gmail.com`} className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Vivek Verma</span>
+                                    <span onClick={() => window.location = `mailto:sahilzawar2002@gmail.com`} className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Sahil Zawar</span>
                                 </div>
                             </div>
                         </div>

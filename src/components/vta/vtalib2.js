@@ -1,4 +1,4 @@
-export default function convert(videoFileData, targetAudioFormat) {
+export default function convert2(videoFileData, targetAudioFormat, videoName) {
     try {
         targetAudioFormat = targetAudioFormat.toLowerCase();
         let reader = new FileReader();
@@ -25,7 +25,7 @@ export default function convert(videoFileData, targetAudioFormat) {
                         let blob = getBlobFromBase64Data(b64Data, contentType);
                         let blobUrl = URL.createObjectURL(blob);
                         let convertedAudio = {
-                            name: videoFileData.name.substring(0, videoFileData.name.lastIndexOf(".")),
+                            name: videoName,
                             format: targetAudioFormat,
                             data: blobUrl,
                             blb: blob
